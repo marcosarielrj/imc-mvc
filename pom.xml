@@ -1,5 +1,4 @@
 <project 
-
   xmlns="http://maven.apache.org/POM/4.0.0" 
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -19,6 +18,17 @@
     <failOnMissingWebXml>false</failOnMissingWebXml>
 </properties>
 
+ <dependencies>
+    <!-- Para Servlet versão 3 -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <!-- Para não "empacotar" a biblioteca com a aplicação. O application server já possui essa biblioteca.  -->
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
 <build>
     <plugins>
       <plugin>
@@ -27,6 +37,7 @@
         <version>2.2</version>
         <configuration>
           <port>9090</port>
+          <path>/</path>
         </configuration>
       </plugin>
     </plugins>

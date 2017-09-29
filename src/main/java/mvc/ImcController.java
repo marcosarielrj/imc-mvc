@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(value = "/imcMVC")
+@WebServlet(value = "/Imcmvc")
 public class ImcController extends HttpServlet {
 	@Override
 	protected void doGet(
@@ -18,12 +18,13 @@ public class ImcController extends HttpServlet {
 		//Obt�m os par�metros da requisi��o.
 		String pesoString = request.getParameter("peso");
 		String alturaString = request.getParameter("altura");
+		String resultado = "";
 		
 		
 		//Executa a regra de neg�cio.
 		if (pesoString == null || alturaString == null || pesoString.equals("") || alturaString.equals("")){
 			
-			String resultado =
+				resultado =
 				"Digite os dados";
 		} else {
 			
@@ -33,7 +34,7 @@ public class ImcController extends HttpServlet {
 			float peso = pesoString == null ? 0 : Float.parseFloat(pesoString);
 			float altura = alturaString == null ? 0 : Float.parseFloat(alturaString);
 			
-			String resultado =
+				resultado =
 					"" + ImcModel.imc(peso,altura);
 			
 		}
@@ -41,6 +42,6 @@ public class ImcController extends HttpServlet {
 		//Chama a view.
 		//Mandar mensagem para o JSP mostrar.
 		request.setAttribute("resultado", resultado);
-		request.getRequestDispatcher("imcView.jsp").forward(request, response);
+		request.getRequestDispatcher("mvc/ImcView.jsp").forward(request, response);
 	}
 }
