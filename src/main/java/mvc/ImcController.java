@@ -16,14 +16,27 @@ public class ImcController extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 
 		//Obt�m os par�metros da requisi��o.
-		String idadeString = request.getParameter("idade");
-		float peso = idadeString == null ? 0 : Float.parseFloat(idadeString);
 		String pesoString = request.getParameter("peso");
-		float altura = idadeString == null ? 0 : Float.parseFloat(idadeString);
+		String alturaString = request.getParameter("altura");
+		
 		
 		//Executa a regra de neg�cio.
-		String resultado =
-				"" + ImcModel.imc(peso,altura);
+		if (pesoString == null || alturaString == null || pesoString.equals("") || alturaString.equals("")){
+			
+			String resultado =
+				"Digite os dados";
+		} else {
+			
+			pesoString = pesoString.replaceAll(",", ".");
+			alturaString = alturaString.replaceAll(",", ".");
+			  
+			float peso = pesoString == null ? 0 : Float.parseFloat(pesoString);
+			float altura = alturaString == null ? 0 : Float.parseFloat(alturaString);
+			
+			String resultado =
+					"" + ImcModel.imc(peso,altura);
+			
+		}
 		
 		//Chama a view.
 		//Mandar mensagem para o JSP mostrar.
