@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(value = "/Imcmvc")
+@WebServlet(value = "/imcmvc")
 public class ImcController extends HttpServlet {
 	@Override
 	protected void doGet(
