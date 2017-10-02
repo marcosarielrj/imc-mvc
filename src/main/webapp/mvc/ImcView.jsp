@@ -25,21 +25,6 @@
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
     
-    <!--  <script>
-      
-      function calcularimc(){
-        
-        var peso = $("input#peso").val();
-        var altura = $("input#altura").val();
-        var imc = peso / (altura*altura);
-        $('#resultado').html(imc);
-        $("input#peso").val("");
-        $("input#altura").val("");
-        console.log(imc);
-      }
-    </script>
-    -->
-    
   </head>
 
   <body>
@@ -47,11 +32,11 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.html" style="color: black">Calculo do IMC</a>
+        <a class="navbar-brand" href="http://localhost:9090/imcmvc" style="color: black">Calculo do IMC</a>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html" style="color: black">Home</a>
+              <a class="nav-link" href="http://localhost:9090/imcmvc" style="color: black">Home</a>
             </li>
           </ul>
         </div>
